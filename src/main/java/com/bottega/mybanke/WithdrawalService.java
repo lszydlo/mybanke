@@ -1,12 +1,16 @@
 package com.bottega.mybanke;
 
+import lombok.AllArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+@Service
+@AllArgsConstructor
 public class WithdrawalService {
 
-	WithdrawalRepo repo;
-	ApplicationEventPublisher publisher;
+	private WithdrawalRepo repo;
+	private ApplicationEventPublisher publisher;
 
 	@Transactional
 	public void handle(WithdrawCommand command) {

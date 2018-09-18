@@ -1,10 +1,14 @@
 package com.bottega.mybanke;
 
+import lombok.AllArgsConstructor;
 import org.springframework.context.event.EventListener;
 import org.springframework.jdbc.core.JdbcOperations;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
+@AllArgsConstructor
 public class WithdrawalReader {
 
 	JdbcOperations jdbcOperations;
