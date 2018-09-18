@@ -9,7 +9,12 @@ public class CreditCard {
 	private BigDecimal creditLimit;
 	private BigDecimal creditTaken;
 
-	public WithdrawalWasSuccess withdraw(WithdrawCommand command) {
+	public WithdrawalWasSuccess withdraw(WithdrawCommand command, Atm atm) {
+
+		if (atm.isNotTrusted()) {
+			throw new RuntimeException();
+		}
+
 		if (command.getAmount().compareTo(availableMoney()) > 0) {
 			throw new RuntimeException("Limit exceeded");
 		} else {
