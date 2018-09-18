@@ -1,5 +1,6 @@
-package com.bottega.mybanke;
+package com.bottega.mybanke.services.admin;
 
+import com.bottega.mybanke.services.withdrawal.WithdrawalWasSuccess;
 import lombok.AllArgsConstructor;
 import org.springframework.context.event.EventListener;
 import org.springframework.jdbc.core.JdbcOperations;
@@ -15,7 +16,7 @@ public class WithdrawalReader {
 
 
 	@EventListener
-	void listenOn(WithdrawalWasSuccess event) {
+	public void listenOn(WithdrawalWasSuccess event) {
 		// jdbcOperations./////
 	}
 

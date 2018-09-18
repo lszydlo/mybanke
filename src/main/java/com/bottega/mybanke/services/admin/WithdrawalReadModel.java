@@ -1,4 +1,4 @@
-package com.bottega.mybanke;
+package com.bottega.mybanke.services.admin;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

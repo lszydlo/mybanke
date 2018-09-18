@@ -1,4 +1,4 @@
-package com.bottega.mybanke;
+package com.bottega.mybanke.services.withdrawal;
 
 import java.math.BigDecimal;
 import java.util.UUID;

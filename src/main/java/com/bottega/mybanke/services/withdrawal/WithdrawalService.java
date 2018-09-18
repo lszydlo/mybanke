@@ -1,4 +1,4 @@
-package com.bottega.mybanke;
+package com.bottega.mybanke.services.withdrawal;
 
 import lombok.AllArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
