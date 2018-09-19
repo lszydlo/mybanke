@@ -14,8 +14,6 @@ class FlowRepo {
 
 	private final FlowDao flowDao;
 
-
-
 	void apply(UUID id, Function<QDocFlow, DomainEvent> consumer) {
 		Optional<QDocFlowRecord> recordOption = flowDao.findById(id);
 

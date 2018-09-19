@@ -7,11 +7,13 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Version;
 import java.util.UUID;
 
 @Entity
 @Data
+@Table(name = "qdoc")
 public class QDocFlowRecord {
 
 	@Id
