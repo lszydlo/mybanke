@@ -1,4 +1,4 @@
-package com.bottega.qdocref.services.flow.consumes;
+package com.bottega.qdocref.services.flow.domain.consumes;
 
 import java.util.UUID;
 

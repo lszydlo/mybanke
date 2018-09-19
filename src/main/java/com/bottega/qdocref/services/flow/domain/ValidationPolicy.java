@@ -1,4 +1,4 @@
-package com.bottega.qdocref.services.flow;
+package com.bottega.qdocref.services.flow.domain;
 
 class ValidationPolicy {
 	private String systemType;
@@ -7,7 +7,7 @@ class ValidationPolicy {
 		this.systemType = systemType;
 	}
 
-	void validate(QDocStatus destinationStatus, FlowService.QDocFlow.FlowData flowData) {
+	void validate(QDocStatus destinationStatus, QDocFlow.FlowData flowData) {
 
 	}
 }

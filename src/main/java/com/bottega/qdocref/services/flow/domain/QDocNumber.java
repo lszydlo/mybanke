@@ -1,4 +1,4 @@
-package com.bottega.qdocref.services.flow;
+package com.bottega.qdocref.services.flow.domain;
 
 import java.time.LocalDate;
 
@@ -14,7 +14,7 @@ public class QDocNumber {
 		number = systemType + SEPARATOR + next + SEPARATOR + date.getMonthValue() + SEPARATOR + date.getYear();
 	}
 
-	private QDocNumber(String number) {
+	QDocNumber(String number) {
 		this.number = number;
 	}
 
@@ -25,5 +25,9 @@ public class QDocNumber {
 	public QDocNumber addSuffix(String suffix) {
 
 		return new QDocNumber( number + SEPARATOR + suffix);
+	}
+
+	public String value() {
+		return number;
 	}
 }
