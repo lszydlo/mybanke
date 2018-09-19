@@ -1,6 +1,7 @@
 package com.bottega.qdocref.services.flow;
 
 import com.bottega.qdocref.services.flow.consumes.DoCreateQDoc;
+import com.bottega.qdocref.services.flow.consumes.DoPublishQDoc;
 import lombok.AllArgsConstructor;
 import lombok.Value;
 import org.springframework.stereotype.Service;
@@ -25,13 +26,42 @@ public class FlowService {
 		repo.save(flow);
 	}
 
+	public void handle(DoPublishQDoc command) {
+
+
+		QDocFlow flow = repo.load(command.getId());
+
+		ValidationPolicy validationPolicy = new ValidationPolicy("ISO");
+		flow.publish(validationPolicy);
+
+
+		repo.save(flow);
+	}
+
 	class QDocFlow {
 
 		private QDocNumber number;
+		private QDocStatus status;
 
-		public QDocFlow(QDocNumber number) {
+		QDocFlow(QDocNumber number) {
 
 			this.number = number;
+		}
+
+		void publish(ValidationPolicy validationPolicy) {
+			if (status == QDocStatus.VERIFIED) {
+				validationPolicy.validate(QDocStatus.PUBLISHED, getFlowData());
+				this.status = QDocStatus.PUBLISHED;
+			} else {
+				throw new RuntimeException();
+			}
+		}
+
+		private FlowData getFlowData() {
+			return new FlowData();
+		}
+
+		class FlowData {
 		}
 	}
 
